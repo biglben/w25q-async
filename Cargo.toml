@@ -1,0 +1,25 @@
+[package]
+name = "w25q-async"
+version = "0.1.0"
+description = "embedded-hal-async driver for W25Q serial NOR flash"
+authors = [
+    "Maarten de Vries <maarten@de-vri.es>",
+    "Jonas Schievink <jonasschievink@gmail.com>",
+    "Henrik Böving <hargonix@gmail.com>",
+    "David O'Connor <the_alchemist@fastmail.com>",
+    "Diego Frenoux <diego@churrosoft.ar>",
+]
+license = "0BSD"
+readme = "README.md"
+documentation = "https://docs.rs/w25q-async"
+repository = "https://github.com/de-vri-es/w25q-async"
+keywords = ["embedded-hal-async", "async", "serial", "flash", "spi"]
+categories = ["embedded"]
+
+edition = "2024"
+
+[dependencies]
+embedded-hal-async = "1.0.0"
+
+[dev-dependencies]
+assert2 = "0.3.17-beta2"
