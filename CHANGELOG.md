@@ -1,3 +1,7 @@
+# Version 0.1.1 - 2026-01-27
+
+* Update `README.md`.
+
 # Version 0.1.0 - 2026-01-27
 
 * Fork from `w25q`.

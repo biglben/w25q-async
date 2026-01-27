@@ -1,6 +1,6 @@
 [package]
 name = "w25q-async"
-version = "0.1.0"
+version = "0.1.1"
 description = "embedded-hal-async driver for W25Q serial NOR flash"
 authors = [
     "Maarten de Vries <maarten@de-vri.es>",
