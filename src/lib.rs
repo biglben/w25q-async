@@ -338,7 +338,7 @@ impl<SPI: SpiDevice> Flash<SPI> {
     pub async fn erase_sector(&mut self, addr: u32) -> Result<(), Error<SPI::Error>> {
         self.write_enable().await?;
 
-        let addr = addr.to_be_bytes();
+        let addr = addr.to_le_bytes();
         let cmd_buf = [
             Opcode::SectorErase as u8,
             addr[2],
@@ -360,7 +360,7 @@ impl<SPI: SpiDevice> Flash<SPI> {
         for chunk in data.chunks(256) {
             self.write_enable().await?;
 
-            let addr_bytes = current_addr.to_be_bytes();
+            let addr_bytes = current_addr.to_le_bytes();
             current_addr += 256;
             let cmd_buf = [
                 Opcode::PageProg as u8,
@@ -385,7 +385,7 @@ impl<SPI: SpiDevice> Flash<SPI> {
     pub async fn erase_block(&mut self, addr: u32) -> Result<(), Error<SPI::Error>> {
         self.write_enable().await?;
 
-        let addr = addr.to_be_bytes();
+        let addr = addr.to_le_bytes();
         let cmd_buf = [
             Opcode::BlockErase as u8,
             addr[2],
